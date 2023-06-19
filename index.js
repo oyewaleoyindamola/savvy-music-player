@@ -24,25 +24,37 @@ let track_list = [
   {
     name: " Nothing",
     artist: "Moses Bliss",
-    image: "Image URL",
+    image: "https://justnaija.com/uploads/2023/06/Moses-Bliss-Nothing-artwork",
     path: "Nothing.mp3",
+  },
+  {
+    name: "Reason You",
+    artist: "Rema",
+    image: "https://i1.sndcdn.com/artworks-W9BryrRWcopy-0-t500x500.jpg",
+    path: "Reason-You.mp3",
+  },
+  {
+    name: "Amapianon",
+    artist: "Asake ft Olamide",
+    image: "https://thefader-res.cloudinary.com/private_images/w_760,c_limit,f_auto,q_auto:best/Screenshot_2023-05-23_at_6.46.53_PM_or4kmn/asake-i-work-of-art-i-cover.jpg",
+    path: "Amapiano.mp3",
   },
   {
     name: "Lift Me Up",
     artist: "Rihanna",
-    image: "Image URL",
+    image: "https://upload.wikimedia.org/wikipedia/en/4/43/Rihanna_-_Lift_Me_Up.png",
     path: "liftMeUp.mp3",
   },
   {
     name: "Charm",
     artist: "Rema",
-    image: "Image URL",
+    image: "https://i1.sndcdn.com/artworks-W9BryrRWcopy-0-t500x500.jpg",
     path: "Charm.mp3",
   },
   {
     name: "Somewher Only We Know",
     artist: "Keane",
-    image: "Image URL",
+    image: "https://i1.sndcdn.com/artworks-000162294097-c1g2xw-t500x500.jpg",
     // path: "Enthusiast.mp3",
     path: "somewhereOnlyWeKnow.mp3",
   },
@@ -89,6 +101,9 @@ function playTrack() {
   // Play the loaded track
   curr_track.play();
   isPlaying = true;
+  track_art.classList.add("playing")
+  // track_art.style.padding= `${2}rem`
+  // track_art.style.border= `10px solid red`
 
   // Replace icon with the pause icon
   playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
@@ -96,6 +111,7 @@ function playTrack() {
 
 function pauseTrack() {
   // Pause the loaded track
+  track_art.classList.remove("playing")
   curr_track.pause();
   isPlaying = false;
 
@@ -209,7 +225,7 @@ function playUserSelectedMusic() {
 const playListContainer = document.querySelector(".playlistContainer");
 playListContainer.style.display = "none";
 
-const playListIcon = document.querySelector(".fa-list-music");
+const playListIcon = document.querySelector(".playListIcon");
 playListIcon.addEventListener("click", () => {
   if (playListContainer.style.display === "block") {
     playListContainer.style.display = "none";

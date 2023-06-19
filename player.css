@@ -76,6 +76,20 @@ i.fa-list-music {
   background-position: center;
   border-radius: 50%;
 }
+.playing{
+  border: 20px solid rgb(44, 223, 20);
+  padding: 2rem;
+  animation: player 5s infinite linear;
+}
+@keyframes player {
+  from{
+    transform: rotate(0deg);
+  }to{
+    transform: rotate(360deg);
+  }
+  
+}
+
 .control-buttons {
   display: flex;
   justify-content: center;
