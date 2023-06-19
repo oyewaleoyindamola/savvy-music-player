@@ -36,13 +36,15 @@ let track_list = [
   {
     name: "Amapianon",
     artist: "Asake ft Olamide",
-    image: "https://thefader-res.cloudinary.com/private_images/w_760,c_limit,f_auto,q_auto:best/Screenshot_2023-05-23_at_6.46.53_PM_or4kmn/asake-i-work-of-art-i-cover.jpg",
+    image:
+      "https://thefader-res.cloudinary.com/private_images/w_760,c_limit,f_auto,q_auto:best/Screenshot_2023-05-23_at_6.46.53_PM_or4kmn/asake-i-work-of-art-i-cover.jpg",
     path: "Amapiano.mp3",
   },
   {
     name: "Lift Me Up",
     artist: "Rihanna",
-    image: "https://upload.wikimedia.org/wikipedia/en/4/43/Rihanna_-_Lift_Me_Up.png",
+    image:
+      "https://upload.wikimedia.org/wikipedia/en/4/43/Rihanna_-_Lift_Me_Up.png",
     path: "liftMeUp.mp3",
   },
   {
@@ -101,9 +103,7 @@ function playTrack() {
   // Play the loaded track
   curr_track.play();
   isPlaying = true;
-  track_art.classList.add("playing")
-  // track_art.style.padding= `${2}rem`
-  // track_art.style.border= `10px solid red`
+  track_art.classList.add("playing");
 
   // Replace icon with the pause icon
   playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
@@ -111,7 +111,7 @@ function playTrack() {
 
 function pauseTrack() {
   // Pause the loaded track
-  track_art.classList.remove("playing")
+  track_art.classList.remove("playing");
   curr_track.pause();
   isPlaying = false;
 
@@ -234,14 +234,26 @@ playListIcon.addEventListener("click", () => {
   }
 });
 
-// playListContainer.innerHTML += track_list.map((track) => {
-//   const div = document.createElement("div");
-//   const img = document.createElement("img");
-//   // const paragra
-//   div.append((img.src = track.image));
-//   // div.append()
-//   // `<div> <img src="${track.image} alt="music-image" />  <p> ${track.name} </p> <p>${track.artist} </p>  </div>`;
-// });
+const playPlaylistTrack = () => {
+  curr_track.src = track.path;
+};
+
+// const playListWrapper = document.querySelector(".playListWrapper");
+// playListContainer.addEventListener("click", playPlaylistTrack);
+playListContainer.innerHTML = track_list
+  .map((track) => {
+    return `<div class="playListWrapper" style="cursor:pointer" >
+      <div>
+       <img src="${track.image}" alt="track image" />
+    </div> 
+    <div>
+        <p>${track.name}</p>
+        <p><i>${track.artist}</i></p>
+    </div>
+    </div>
+  `;
+  })
+  .join(" ");
 
 // Load the first track in the tracklist
 loadTrack(track_index);

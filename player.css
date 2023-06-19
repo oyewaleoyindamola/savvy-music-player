@@ -2,10 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +23,8 @@
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  gap: 2rem;
+  gap: 1rem;
+  margin: 2rem;
   border-radius: 0.5rem;
   padding: 2rem;
 }
@@ -39,9 +39,9 @@
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
-.playListWrapper{
+.playListWrapper {
   display: grid;
-  grid-template-columns: 3rem 1fr 2rem;
+  grid-template-columns: 3rem 1fr;
   gap: 0.5rem;
 }
 .playlistContainer img {
@@ -76,18 +76,18 @@ i.fa-list-music {
   background-position: center;
   border-radius: 50%;
 }
-.playing{
+.playing {
   border: 20px solid rgb(44, 223, 20);
   padding: 2rem;
   animation: player 5s infinite linear;
 }
 @keyframes player {
-  from{
+  from {
     transform: rotate(0deg);
-  }to{
+  }
+  to {
     transform: rotate(360deg);
   }
-  
 }
 
 .control-buttons {
