@@ -16,7 +16,6 @@ let track_index = 0;
 let isPlaying = false;
 let updateTimer;
 
-
 // Create the audio element for the player
 let curr_track = document.createElement("audio");
 
@@ -71,9 +70,7 @@ function loadTrack(track_index) {
   // Move to the next track if the current finishes playing
   // using the 'ended' event
   curr_track.addEventListener("ended", nextTrack);
-
 }
-
 
 // Function to reset all values to their default
 function resetValues() {
@@ -131,10 +128,10 @@ function seekTo() {
   // Calculate the seek position by the
   // percentage of the seek slider
   // and get the relative duration to the track
-  seekto = curr_track.duration * (seek_slider.value / 100);
+  let seekto = curr_track.duration * (seek_slider.value / 100);
 
   // Set the current track position to the calculated seek position
-  curr_track.currentTime = seekTo;
+  curr_track.currentTime = seekto;
 }
 
 function seekUpdate() {
@@ -174,5 +171,54 @@ function seekUpdate() {
     total_duration.textContent = durationMinutes + ":" + durationSeconds;
   }
 }
+// load user selected track
+const inputElement = document.getElementById("musicFile");
+
+inputElement.addEventListener("change", playUserSelectedMusic, false);
+
+function playUserSelectedMusic() {
+  for (let i = 0; i < this.files.length; i++) {
+    const element = this.files[i];
+
+    if (element.type !== "audio/mpeg") {
+      alert("please select a valid audio file");
+      return;
+    }
+
+    const audioUrl = window.URL.createObjectURL(element);
+    playpauseTrack();
+    curr_track.src = audioUrl;
+    track_list.unshift({
+      name: element.name,
+      artist: "Your Selected Artist",
+      image: "Image URL",
+      path: audioUrl,
+    });
+    loadTrack(track_index);
+  }
+  // console.log(track_list);
+}
+
+const playListContainer = document.querySelector(".playlistContainer");
+playListContainer.style.display = "none";
+
+const playListIcon = document.querySelector(".fa-list-music");
+playListIcon.addEventListener("click", () => {
+  if (playListContainer.style.display === "block") {
+    playListContainer.style.display = "none";
+  } else {
+    playListContainer.style.display = "block";
+  }
+});
+
+// playListContainer.innerHTML += track_list.map((track) => {
+//   const div = document.createElement("div");
+//   const img = document.createElement("img");
+//   // const paragra
+//   div.append((img.src = track.image));
+//   // div.append()
+//   // `<div> <img src="${track.image} alt="music-image" />  <p> ${track.name} </p> <p>${track.artist} </p>  </div>`;
+// });
+
 // Load the first track in the tracklist
 loadTrack(track_index);
