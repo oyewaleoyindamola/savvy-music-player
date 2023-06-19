@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.con{
+    height: 100vh;
+    background:linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    padding: 1rem 2rem;
+}
+.con, .musicCon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    border-radius: 50%;
+}
+.musicCon{
+    background:linear-gradient(to right, #765fec, #48a3c3, #44c0ab) ;
+    height:40rem;
+    width:40rem ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    border-radius: 2rem;
+}
+
+button{
+    background:#121216;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+h1, h3, p {
+    color: white;
+}
