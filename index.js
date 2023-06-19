@@ -171,6 +171,13 @@ function seekUpdate() {
     total_duration.textContent = durationMinutes + ":" + durationSeconds;
   }
 }
+let volume_slider = document.querySelector(".volume_slider");
+
+function setVolume() {
+  // Set the volume according to the
+  // percentage of the volume slider set
+  curr_track.volume = volume_slider.value / 100;
+}
 // load user selected track
 const inputElement = document.getElementById("musicFile");
 
@@ -222,3 +229,4 @@ playListIcon.addEventListener("click", () => {
 
 // Load the first track in the tracklist
 loadTrack(track_index);
+console.log(curr_track);

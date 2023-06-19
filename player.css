@@ -14,7 +14,6 @@
 
 .track-container {
   position: relative;
-  height: 80%;
   max-height: 1000px;
   min-width: 800px;
   background: linear-gradient(to right, #765fec, #48a3c3, #44c0ab);
@@ -26,6 +25,7 @@
   font-size: 2rem;
   gap: 2rem;
   border-radius: 0.5rem;
+  padding: 2rem;
 }
 .playlistContainer {
   padding: 1rem;
