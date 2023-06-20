@@ -12,10 +12,10 @@
     <link rel="stylesheet" type="text/css" href="player.css" />
   </head>
   <body>
+    <!-- Whole player container -->
     <div class="container">
       <div class="track-container">
         <div class="playlistContainer">
-
         </div>
         <div class="playListSelector">
           <div class="">
@@ -28,11 +28,13 @@
           </div>
           <div class="playListIcon"> <img src="./images/playlist_add_check_FILL0_wght400_GRAD0_opsz48.png" alt=""></i></div>
         </div>
+        <!-- Section for displaying track information. -->
         <div class="track-info">
           <div class="track-art"></div>
           <div class="track-name">Track Name</div>
           <div class="track-artist">Track Artist</div>
         </div>
+        <!-- Track control buttons container -->
         <div class="control-buttons">
           <div class="prev-track" onclick="prevTrack()">
             <i class="fa fa-step-backward fa-2x"></i>
@@ -44,6 +46,7 @@
             <i class="fa fa-step-forward fa-2x"></i>
           </div>
         </div>
+        <!-- Section for displaying the track duration -->
         <div class="slider_container">
           <div class="current-time">00:00</div>
           <input
@@ -56,7 +59,7 @@
           />
           <div class="total-duration">00:00</div>
         </div>
-        <!-- Define the section for displaying the volume slider-->
+        <!-- Section for displaying the volume slider-->
         <div class="slider_container">
           <i class="fa fa-volume-down"></i>
           <input

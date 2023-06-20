@@ -22,6 +22,20 @@ let curr_track = document.createElement("audio");
 // Define the list of tracks that have to be played
 let track_list = [
   {
+    name: "All My Life",
+    artist: "Lil Durk ft J.Cole",
+    image: "https://i0.wp.com/hiphopkit.com/uploads/2023/05/Lil-Durk-All-My-Life-artwork.jpeg?ulb=false&ssl=1&resize=320,350",
+    // path: "Enthusiast.mp3",
+    path: "AllmyLife.mp3",
+  },
+  {
+    name: "Pick Up",
+    artist: "Tiwa Savage",
+    image: "https://trendybeatz.com/images/Tiwa-Savage-Pick-Up-Artwork.jpg",
+    // path: "Enthusiast.mp3",
+    path: "Pick-Up.mp3",
+  },
+  {
     name: " Nothing",
     artist: "Moses Bliss",
     image: "https://justnaija.com/uploads/2023/06/Moses-Bliss-Nothing-artwork",
@@ -54,12 +68,35 @@ let track_list = [
     path: "Charm.mp3",
   },
   {
-    name: "Somewher Only We Know",
+    name: "Somewhere Only We Know",
     artist: "Keane",
     image: "https://i1.sndcdn.com/artworks-000162294097-c1g2xw-t500x500.jpg",
     // path: "Enthusiast.mp3",
     path: "somewhereOnlyWeKnow.mp3",
   },
+  {
+    name: "GWAGWALADA",
+    artist: "BNXN Kiss Daniel Seyi Vibez",
+    image: "https://cdns-images.dzcdn.net/images/cover/7f89da381e2508e30a82f7dc2d18287f/500x500.jpg",
+    // path: "Enthusiast.mp3",
+    path: "GWAGWALADA.mp3",
+  },
+  {
+    name: "Believe Me",
+    artist: "Johnny Drille",
+    image: "https://naijamz.com/images/Johnny-Drille-Believe-Me-artwork.jpg",
+    // path: "Enthusiast.mp3",
+    path: "BelieveMe.mp3",
+  },
+  {
+    name: "Body and Soul",
+    artist: "Joeboy",
+    image: "https://trendybeatz.com/images/Joeboy-Body-and-Soul-Artwork.jpg",
+    // path: "Enthusiast.mp3",
+    path: "BodyandSoul.mp3",
+  },
+  
+
 ];
 
 function loadTrack(track_index) {
