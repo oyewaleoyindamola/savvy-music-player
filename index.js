@@ -14,6 +14,7 @@ const total_duration = document.querySelector(".total-duration");
 
 const playListContainer = document.querySelector(".playlistContainer");
 
+// GLobal variables
 let track_index = 0;
 let isPlaying = false;
 let updateTimer;
@@ -99,6 +100,34 @@ let track_list = [
     // path: "Enthusiast.mp3",
     path: "Rexxie-Abracadabra-Remix-feat-Naira-Marley-Skiibii-Wizkid-(JustNaija.com).mp3",
   },
+  {
+    name: "New Religion",
+    artist: "Olamide ft Asake",
+    image: "https://trendybeatz.com/images/Joeboy-Body-and-Soul-Artwork.jpg",
+    // path: "Enthusiast.mp3",
+    path: "Olamide-New-Religion-ft-Asake-(JustNaija.com).mp3",
+  },
+  {
+    name: "Someone",
+    artist: "Fireboy",
+    image: "https://trendybeatz.com/images/Joeboy-Body-and-Soul-Artwork.jpg",
+    // path: "Enthusiast.mp3",
+    path: "Fireboy-DML-Someone-(JustNaija.com).mp3",
+  },
+  {
+    name: "In My Mind",
+    artist: "BNXN",
+    image: "https://trendybeatz.com/images/Joeboy-Body-and-Soul-Artwork.jpg",
+    // path: "Enthusiast.mp3",
+    path: "Buju-BNXN-In-My-Mind-(JustNaija.com).mp3",
+  },
+  {
+    name: "Davido",
+    artist: "In The Garden",
+    image: "https://trendybeatz.com/images/Joeboy-Body-and-Soul-Artwork.jpg",
+    // path: "Enthusiast.mp3",
+    path: "Davido-IN-THE-GARDEN-Ft-Morravey-(JustNaija.com).mp3",
+  },
 ];
 
 function loadTrack(track_index) {
@@ -106,7 +135,7 @@ function loadTrack(track_index) {
   clearInterval(updateTimer);
   resetValues();
 
-  // Load a new track
+  // Load a new track using the src.
   curr_track.src = track_list[track_index].path;
   curr_track.load();
 
@@ -233,12 +262,12 @@ function setVolume() {
   // percentage of the volume slider set
   curr_track.volume = volume_slider.value / 100;
 }
-// load user selected track
 const inputElement = document.getElementById("musicFile");
 
 inputElement.addEventListener("change", playUserSelectedMusic);
 
 function playUserSelectedMusic() {
+  // To load user selected music file.
   for (let i = 0; i < this.files.length; i++) {
     const element = this.files[i];
 
@@ -246,32 +275,33 @@ function playUserSelectedMusic() {
       alert("please select a valid audio file");
       return;
     }
-
+    // Allows users to select music from user's device folder
     const audioUrl = window.URL.createObjectURL(element);
     curr_track.src = audioUrl;
     track_list.unshift({
+      // Details of user's selected music
       name: element.name,
       artist: "Your Selected Artist",
       image: "Image URL",
       path: audioUrl,
     });
-    // addUserSelectedFileToPlayList();
     loadTrack(track_index);
     playTrack();
   }
 }
+// Play list to accept track list
 const addUserSelectedFileToPlayList = () => {
   for (const track of track_list) {
     const li = ul.appendChild(document.createElement("li"));
     li.className = "playListWrapper";
     li.innerHTML = ` 
-      <div>
-        <img src="${track.image}" alt="track image" />
-      </div> 
-      <div>
-        <p>${track.name}</p>
-        <p><i>${track.artist}</i></p>
-      </div>`;
+    <div>
+    <img src="${track.image}" alt="track image" />
+    </div> 
+    <div>
+    <p>${track.name}</p>
+    <p><i>${track.artist}</i></p>
+    </div>`;
     li.addEventListener("click", () => {
       curr_track.src = track.path;
       track_list.unshift({
@@ -280,6 +310,7 @@ const addUserSelectedFileToPlayList = () => {
         image: track.image,
         path: track.path,
       });
+      // To play form playlist.
       loadTrack(track_index);
       playTrack();
     });

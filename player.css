@@ -14,6 +14,7 @@
   background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
 }
 
+/* player container */
 .track-container {
   position: relative;
   /* max-height: 1000px; */
@@ -30,6 +31,7 @@
   border-radius: 0.5rem;
   padding: 1rem;
 }
+/* Play list style */
 .playlistContainer {
   padding: 1rem;
   background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
@@ -43,19 +45,23 @@
   height: 80%;
   overflow-y: scroll;
 }
+/* Play list container style */
 .playListWrapper {
   display: grid;
   grid-template-columns: 3rem 1fr;
   gap: 0.5rem;
   cursor: pointer;
 }
+/* play list image style */
 .playlistContainer img {
   width: 100%;
   border-radius: 50%;
 }
+/* play list text style */
 .playlistContainer p {
   font-size: 1rem;
 }
+/* user selected music container */
 .playListSelector {
   display: flex;
   justify-content: space-between;
