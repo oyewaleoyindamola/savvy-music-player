@@ -12,6 +12,8 @@ const seek_slider = document.querySelector(".seek_slider");
 const curr_time = document.querySelector(".current-time");
 const total_duration = document.querySelector(".total-duration");
 
+const playListContainer = document.querySelector(".playlistContainer");
+
 let track_index = 0;
 let isPlaying = false;
 let updateTimer;
@@ -24,7 +26,8 @@ let track_list = [
   {
     name: "All My Life",
     artist: "Lil Durk ft J.Cole",
-    image: "https://i0.wp.com/hiphopkit.com/uploads/2023/05/Lil-Durk-All-My-Life-artwork.jpeg?ulb=false&ssl=1&resize=320,350",
+    image:
+      "https://i0.wp.com/hiphopkit.com/uploads/2023/05/Lil-Durk-All-My-Life-artwork.jpeg?ulb=false&ssl=1&resize=320,350",
     // path: "Enthusiast.mp3",
     path: "AllmyLife.mp3",
   },
@@ -57,7 +60,8 @@ let track_list = [
   {
     name: "GWAGWALADA",
     artist: "BNXN Kiss Daniel Seyi Vibez",
-    image: "https://cdns-images.dzcdn.net/images/cover/7f89da381e2508e30a82f7dc2d18287f/500x500.jpg",
+    image:
+      "https://cdns-images.dzcdn.net/images/cover/7f89da381e2508e30a82f7dc2d18287f/500x500.jpg",
     // path: "Enthusiast.mp3",
     path: "GWAGWALADA.mp3",
   },
@@ -95,7 +99,6 @@ let track_list = [
     // path: "Enthusiast.mp3",
     path: "BodyandSoul.mp3",
   },
-  
 ];
 
 function loadTrack(track_index) {
@@ -233,7 +236,7 @@ function setVolume() {
 // load user selected track
 const inputElement = document.getElementById("musicFile");
 
-inputElement.addEventListener("change", playUserSelectedMusic, false);
+inputElement.addEventListener("change", playUserSelectedMusic);
 
 function playUserSelectedMusic() {
   for (let i = 0; i < this.files.length; i++) {
@@ -252,13 +255,37 @@ function playUserSelectedMusic() {
       image: "Image URL",
       path: audioUrl,
     });
+    // addUserSelectedFileToPlayList();
     loadTrack(track_index);
-    playpauseTrack();
+    playTrack();
   }
-  // console.log(track_list);
 }
+const addUserSelectedFileToPlayList = () => {
+  for (const track of track_list) {
+    const li = ul.appendChild(document.createElement("li"));
+    li.className = "playListWrapper";
+    li.innerHTML = ` 
+      <div>
+        <img src="${track.image}" alt="track image" />
+      </div> 
+      <div>
+        <p>${track.name}</p>
+        <p><i>${track.artist}</i></p>
+      </div>`;
+    li.addEventListener("click", () => {
+      curr_track.src = track.path;
+      track_list.unshift({
+        name: track.name,
+        artist: track.artist,
+        image: track.image,
+        path: track.path,
+      });
+      loadTrack(track_index);
+      playTrack();
+    });
+  }
+};
 
-const playListContainer = document.querySelector(".playlistContainer");
 playListContainer.style.display = "none";
 
 const playListIcon = document.querySelector(".playListIcon");
@@ -270,27 +297,9 @@ playListIcon.addEventListener("click", () => {
   }
 });
 
-const playPlaylistTrack = () => {
-  curr_track.src = track.path;
-};
+playListContainer.textContent = "";
+const ul = playListContainer.appendChild(document.createElement("ul"));
 
-// const playListWrapper = document.querySelector(".playListWrapper");
-// playListContainer.addEventListener("click", playPlaylistTrack);
-playListContainer.innerHTML = track_list
-  .map((track) => {
-    return `<div class="playListWrapper" style="cursor:pointer" >
-      <div>
-       <img src="${track.image}" alt="track image" />
-    </div> 
-    <div>
-        <p>${track.name}</p>
-        <p><i>${track.artist}</i></p>
-    </div>
-    </div>
-  `;
-  })
-  .join(" ");
-
+addUserSelectedFileToPlayList();
 // Load the first track in the tracklist
 loadTrack(track_index);
-console.log(curr_track);
