@@ -48,7 +48,7 @@ let track_list = [
     path: "Reason-You.mp3",
   },
   {
-    name: "Amapianon",
+    name: "Amapiano",
     artist: "Asake ft Olamide",
     image:
       "https://thefader-res.cloudinary.com/private_images/w_760,c_limit,f_auto,q_auto:best/Screenshot_2023-05-23_at_6.46.53_PM_or4kmn/asake-i-work-of-art-i-cover.jpg",
