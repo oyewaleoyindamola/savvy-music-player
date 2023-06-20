@@ -245,7 +245,6 @@ function playUserSelectedMusic() {
     }
 
     const audioUrl = window.URL.createObjectURL(element);
-    playpauseTrack();
     curr_track.src = audioUrl;
     track_list.unshift({
       name: element.name,
@@ -254,6 +253,7 @@ function playUserSelectedMusic() {
       path: audioUrl,
     });
     loadTrack(track_index);
+    playpauseTrack();
   }
   // console.log(track_list);
 }
