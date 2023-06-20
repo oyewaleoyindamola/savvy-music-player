@@ -55,6 +55,13 @@ let track_list = [
     path: "Amapiano.mp3",
   },
   {
+    name: "GWAGWALADA",
+    artist: "BNXN Kiss Daniel Seyi Vibez",
+    image: "https://cdns-images.dzcdn.net/images/cover/7f89da381e2508e30a82f7dc2d18287f/500x500.jpg",
+    // path: "Enthusiast.mp3",
+    path: "GWAGWALADA.mp3",
+  },
+  {
     name: "Lift Me Up",
     artist: "Rihanna",
     image:
@@ -75,13 +82,6 @@ let track_list = [
     path: "somewhereOnlyWeKnow.mp3",
   },
   {
-    name: "GWAGWALADA",
-    artist: "BNXN Kiss Daniel Seyi Vibez",
-    image: "https://cdns-images.dzcdn.net/images/cover/7f89da381e2508e30a82f7dc2d18287f/500x500.jpg",
-    // path: "Enthusiast.mp3",
-    path: "GWAGWALADA.mp3",
-  },
-  {
     name: "Believe Me",
     artist: "Johnny Drille",
     image: "https://naijamz.com/images/Johnny-Drille-Believe-Me-artwork.jpg",
@@ -96,7 +96,6 @@ let track_list = [
     path: "BodyandSoul.mp3",
   },
   
-
 ];
 
 function loadTrack(track_index) {
