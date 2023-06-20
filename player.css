@@ -6,12 +6,12 @@
   list-style-type: none;
 }
 .container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  height: 100vh;
 }
 
 .track-container {
@@ -25,10 +25,10 @@
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  gap: 1rem;
-  margin: 2rem;
+  gap: 0rem;
+  margin: 1rem;
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: 1rem;
 }
 .playlistContainer {
   padding: 1rem;

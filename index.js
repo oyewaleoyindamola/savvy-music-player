@@ -57,14 +57,7 @@ let track_list = [
       "https://thefader-res.cloudinary.com/private_images/w_760,c_limit,f_auto,q_auto:best/Screenshot_2023-05-23_at_6.46.53_PM_or4kmn/asake-i-work-of-art-i-cover.jpg",
     path: "Amapiano.mp3",
   },
-  {
-    name: "GWAGWALADA",
-    artist: "BNXN Kiss Daniel Seyi Vibez",
-    image:
-      "https://cdns-images.dzcdn.net/images/cover/7f89da381e2508e30a82f7dc2d18287f/500x500.jpg",
-    // path: "Enthusiast.mp3",
-    path: "GWAGWALADA.mp3",
-  },
+
   {
     name: "Lift Me Up",
     artist: "Rihanna",
@@ -98,6 +91,13 @@ let track_list = [
     image: "https://trendybeatz.com/images/Joeboy-Body-and-Soul-Artwork.jpg",
     // path: "Enthusiast.mp3",
     path: "BodyandSoul.mp3",
+  },
+  {
+    name: "Abracadabra",
+    artist: "Rexxie",
+    image: "https://trendybeatz.com/images/Joeboy-Body-and-Soul-Artwork.jpg",
+    // path: "Enthusiast.mp3",
+    path: "Rexxie-Abracadabra-Remix-feat-Naira-Marley-Skiibii-Wizkid-(JustNaija.com).mp3",
   },
 ];
 
