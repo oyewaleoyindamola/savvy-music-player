@@ -106,28 +106,28 @@ let track_list = [
     artist: "Olamide ft Asake",
     image: "https://trendybeatz.com/images/Olamide-Ft-Asake-New-Religion-Artwork.jpg",
     // path: "Enthusiast.mp3",
-    path: "Olamide-New-Religion-ft-Asake-(JustNaija.com).mp3",
+    path: "./tracks/Olamide-New-Religion-ft-Asake-(JustNaija.com).mp3",
   },
   {
     name: "Someone",
     artist: "Fireboy",
     image: "https://i0.wp.com/justnaija.com/uploads/2023/05/Fireboy-DML-Someone-artwork.jpeg?ulb=false&ssl=1&resize=320,350",
     // path: "Enthusiast.mp3",
-    path: "Fireboy-DML-Someone-(JustNaija.com).mp3",
+    path: "./tracks/Fireboy-DML-Someone-(JustNaija.com).mp3",
   },
   {
     name: "In My Mind",
     artist: "BNXN",
     image: "https://i0.wp.com/justnaija.com/uploads/2022/08/Buju-BNXN-In-My-Mind-artwork_12.jpg?ulb=false&ssl=1&resize=320,350",
     // path: "Enthusiast.mp3",
-    path: "Buju-BNXN-In-My-Mind-(JustNaija.com).mp3",
+    path: "./tracks/Buju-BNXN-In-My-Mind-(JustNaija.com).mp3",
   },
   {
     name: "Davido",
     artist: "In The Garden",
     image: "https://t2.genius.com/unsafe/340x340/https%3A%2F%2Fimages.genius.com%2Faa33f1b3341820c564c8a76a727f3863.1000x1000x1.jpg",
     // path: "Enthusiast.mp3",
-    path: "Davido-IN-THE-GARDEN-Ft-Morravey-(JustNaija.com).mp3",
+    path: "./tracks/Davido-IN-THE-GARDEN-Ft-Morravey-(JustNaija.com).mp3",
   },
 ];
 
