@@ -14,6 +14,7 @@ const total_duration = document.querySelector(".total-duration");
 
 const playListContainer = document.querySelector(".playlistContainer");
 
+// GLobal variables
 let track_index = 0;
 let isPlaying = false;
 let updateTimer;
@@ -29,75 +30,103 @@ let track_list = [
     image:
       "https://i0.wp.com/hiphopkit.com/uploads/2023/05/Lil-Durk-All-My-Life-artwork.jpeg?ulb=false&ssl=1&resize=320,350",
     // path: "Enthusiast.mp3",
-    path: "AllmyLife.mp3",
+    path: "./tracks/AllmyLife.mp3",
   },
   {
     name: "Pick Up",
     artist: "Tiwa Savage",
     image: "https://trendybeatz.com/images/Tiwa-Savage-Pick-Up-Artwork.jpg",
     // path: "Enthusiast.mp3",
-    path: "Pick-Up.mp3",
+    path: "./tracks/Pick-Up.mp3",
   },
   {
     name: " Nothing",
     artist: "Moses Bliss",
     image: "https://justnaija.com/uploads/2023/06/Moses-Bliss-Nothing-artwork",
-    path: "Nothing.mp3",
+    path: "./tracks/Nothing.mp3",
   },
   {
     name: "Reason You",
     artist: "Rema",
     image: "https://i1.sndcdn.com/artworks-W9BryrRWcopy-0-t500x500.jpg",
-    path: "Reason-You.mp3",
+    path: "./tracks/Reason-You.mp3",
   },
   {
     name: "Amapiano",
     artist: "Asake ft Olamide",
     image:
       "https://thefader-res.cloudinary.com/private_images/w_760,c_limit,f_auto,q_auto:best/Screenshot_2023-05-23_at_6.46.53_PM_or4kmn/asake-i-work-of-art-i-cover.jpg",
-    path: "Amapiano.mp3",
+    path: "./tracks/Amapiano.mp3",
   },
-  {
-    name: "GWAGWALADA",
-    artist: "BNXN Kiss Daniel Seyi Vibez",
-    image:
-      "https://cdns-images.dzcdn.net/images/cover/7f89da381e2508e30a82f7dc2d18287f/500x500.jpg",
-    // path: "Enthusiast.mp3",
-    path: "GWAGWALADA.mp3",
-  },
+
   {
     name: "Lift Me Up",
     artist: "Rihanna",
     image:
       "https://upload.wikimedia.org/wikipedia/en/4/43/Rihanna_-_Lift_Me_Up.png",
-    path: "liftMeUp.mp3",
+    path: "./tracks/liftMeUp.mp3",
   },
   {
     name: "Charm",
     artist: "Rema",
     image: "https://i1.sndcdn.com/artworks-W9BryrRWcopy-0-t500x500.jpg",
-    path: "Charm.mp3",
+    path: "./tracks/Charm.mp3",
   },
   {
     name: "Somewhere Only We Know",
     artist: "Keane",
     image: "https://i1.sndcdn.com/artworks-000162294097-c1g2xw-t500x500.jpg",
     // path: "Enthusiast.mp3",
-    path: "somewhereOnlyWeKnow.mp3",
+    path: "./tracks/somewhereOnlyWeKnow.mp3",
   },
   {
     name: "Believe Me",
     artist: "Johnny Drille",
     image: "https://naijamz.com/images/Johnny-Drille-Believe-Me-artwork.jpg",
     // path: "Enthusiast.mp3",
-    path: "BelieveMe.mp3",
+    path: "./tracks/BelieveMe.mp3",
   },
   {
     name: "Body and Soul",
     artist: "Joeboy",
     image: "https://trendybeatz.com/images/Joeboy-Body-and-Soul-Artwork.jpg",
     // path: "Enthusiast.mp3",
-    path: "BodyandSoul.mp3",
+    path: "./tracks/BodyandSoul.mp3",
+  },
+  {
+    name: "Abracadabra",
+    artist: "Rexxie",
+    image: "https://9jadailyfeeds.com.ng/wp-content/uploads/2023/02/Abracadabra.webp",
+    // path: "Enthusiast.mp3",
+    path: "./tracks/Rexxie-Abracadabra-Remix-feat-Naira-Marley-Skiibii-Wizkid-(JustNaija.com).mp3",
+  },
+  {
+    name: "New Religion",
+    artist: "Olamide ft Asake",
+    image: "https://i0.wp.com/www.val9ja.com/wp-content/uploads/2023/06/Olamide-%E2%80%93-New-Religion-Ft.-Asake.webp?fit=632%2C381&ssl=1",
+    // path: "Enthusiast.mp3",
+    path: "./tracks/Olamide-New-Religion-ft-Asake-(JustNaija.com).mp3",
+  },
+  {
+    name: "Someone",
+    artist: "Fireboy",
+    image: "https://trendybeatz.com/images/Fireboy-DML-Someone-Artwork.jpg",
+    // path: "Enthusiast.mp3",
+    path: "./tracks/Fireboy-DML-Someone-(JustNaija.com).mp3",
+  },
+  {
+    name: "In My Mind",
+    artist: "BNXN",
+    image: "https://justnaija.com/uploads/2022/08/Buju-BNXN-In-My-Mind-artwork_12.jpg",
+    // path: "Enthusiast.mp3",
+    path: "./tracks/Buju-BNXN-In-My-Mind-(JustNaija.com).mp3",
+  },
+  {
+    name: "Davido",
+    artist: "In The Garden",
+    image: "https://images.genius.com/aa33f1b3341820c564c8a76a727f3863.1000x1000x1.jpg",
+    // path: "Enthusiast.mp3",
+    path: "./tracks/Davido-IN-THE-GARDEN-Ft-Morravey-(JustNaija.com).mp3",
   },
   {
     name: "Abracadabra",
@@ -141,7 +170,7 @@ function loadTrack(track_index) {
   clearInterval(updateTimer);
   resetValues();
 
-  // Load a new track
+  // Load a new track using the src.
   curr_track.src = track_list[track_index].path;
   curr_track.load();
 
@@ -268,12 +297,12 @@ function setVolume() {
   // percentage of the volume slider set
   curr_track.volume = volume_slider.value / 100;
 }
-// load user selected track
 const inputElement = document.getElementById("musicFile");
 
 inputElement.addEventListener("change", playUserSelectedMusic);
 
 function playUserSelectedMusic() {
+  // To load user selected music file.
   for (let i = 0; i < this.files.length; i++) {
     const element = this.files[i];
 
@@ -281,32 +310,33 @@ function playUserSelectedMusic() {
       alert("please select a valid audio file");
       return;
     }
-
+    // Allows users to select music from user's device folder
     const audioUrl = window.URL.createObjectURL(element);
     curr_track.src = audioUrl;
     track_list.unshift({
+      // Details of user's selected music
       name: element.name,
       artist: "Your Selected Artist",
       image: "Image URL",
       path: audioUrl,
     });
-    // addUserSelectedFileToPlayList();
     loadTrack(track_index);
     playTrack();
   }
 }
+// Play list to accept track list
 const addUserSelectedFileToPlayList = () => {
   for (const track of track_list) {
     const li = ul.appendChild(document.createElement("li"));
     li.className = "playListWrapper";
     li.innerHTML = ` 
-      <div>
-        <img src="${track.image}" alt="track image" />
-      </div> 
-      <div>
-        <p>${track.name}</p>
-        <p><i>${track.artist}</i></p>
-      </div>`;
+    <div>
+    <img src="${track.image}" alt="track image" />
+    </div> 
+    <div>
+    <p>${track.name}</p>
+    <p><i>${track.artist}</i></p>
+    </div>`;
     li.addEventListener("click", () => {
       curr_track.src = track.path;
       track_list.unshift({
@@ -315,6 +345,7 @@ const addUserSelectedFileToPlayList = () => {
         image: track.image,
         path: track.path,
       });
+      // To play form playlist.
       loadTrack(track_index);
       playTrack();
     });
