@@ -100,41 +100,7 @@ let track_list = [
     // path: "Enthusiast.mp3",
     path: "./tracks/Rexxie-Abracadabra-Remix-feat-Naira-Marley-Skiibii-Wizkid-(JustNaija.com).mp3",
   },
-  {
-    name: "New Religion",
-    artist: "Olamide ft Asake",
-    image: "https://i0.wp.com/www.val9ja.com/wp-content/uploads/2023/06/Olamide-%E2%80%93-New-Religion-Ft.-Asake.webp?fit=632%2C381&ssl=1",
-    // path: "Enthusiast.mp3",
-    path: "./tracks/Olamide-New-Religion-ft-Asake-(JustNaija.com).mp3",
-  },
-  {
-    name: "Someone",
-    artist: "Fireboy",
-    image: "https://trendybeatz.com/images/Fireboy-DML-Someone-Artwork.jpg",
-    // path: "Enthusiast.mp3",
-    path: "./tracks/Fireboy-DML-Someone-(JustNaija.com).mp3",
-  },
-  {
-    name: "In My Mind",
-    artist: "BNXN",
-    image: "https://justnaija.com/uploads/2022/08/Buju-BNXN-In-My-Mind-artwork_12.jpg",
-    // path: "Enthusiast.mp3",
-    path: "./tracks/Buju-BNXN-In-My-Mind-(JustNaija.com).mp3",
-  },
-  {
-    name: "Davido",
-    artist: "In The Garden",
-    image: "https://images.genius.com/aa33f1b3341820c564c8a76a727f3863.1000x1000x1.jpg",
-    // path: "Enthusiast.mp3",
-    path: "./tracks/Davido-IN-THE-GARDEN-Ft-Morravey-(JustNaija.com).mp3",
-  },
-  {
-    name: "Abracadabra",
-    artist: "Rexxie",
-    image: "https://tooxclusive.com/wp-content/uploads/2022/10/Abracadabraa-img.png",
-    // path: "Enthusiast.mp3",
-    path: "Rexxie-Abracadabra-Remix-feat-Naira-Marley-Skiibii-Wizkid-(JustNaija.com).mp3",
-  },
+ 
   {
     name: "New Religion",
     artist: "Olamide ft Asake",
